@@ -1,0 +1,36 @@
+.main-content {
+    display: flex;
+    justify-content: center;
+    margin: 10 auto;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.main_sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 90%;
+    margin: 10 auto;
+    padding: 1rem;
+    background-color: rgb(14, 63, 92);
+    border-radius: 2rem;
+
+}
+
+.main_section_content{
+    padding: 2rem;
+    background-color: rgb(33, 135, 194);
+    border-radius: 1rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.main_section_content:hover{
+    background-color: rgb(148, 188, 211);
+    color: rgb(0, 0, 0);
+}
+
+
+
