@@ -21,4 +21,6 @@ Route::get('/', function () {
 
 Route::controller(ProdutoController::class)->group(function() {
     Route::get('/produtos', 'index')->name('produtos.index');
+    Route::get('/produtos/criar-novo-produto', 'create')->name('produtos.create');
+    Route::post('/produtos/adicionar', 'store')->name('produtos.store');
 });
