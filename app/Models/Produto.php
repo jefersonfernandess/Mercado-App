@@ -10,6 +10,7 @@ class Produto extends Model
     use HasFactory;
 
     protected $table = 'produtos';
+    protected $fillable = ['nome', 'descricao', 'preco', 'quantidade', 'codigo_de_barras'];
 
-    protected $fillabel = ['nome', 'descricao', 'preco', 'quantidade', 'codigo_de_barras',];
+    protected $attributes = [ 'codigo_de_barras' => null ];
 }

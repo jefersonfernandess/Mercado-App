@@ -17,6 +17,27 @@ class ProdutoController extends Controller
     }
 
     public function store(Request $request) {
+
         Produto::create($request->all());
+        return redirect()->route('produtos.index');
+    }
+
+    public function update(Request $request, $id) {
+        $produto = Produto::find($id);
+        if(!isset($id)) {
+            return redirect()->route('produtos.index');
+        }
+        
+        $produto->update($request->all());
+        return redirect()->route('produtos.index');
+    }
+
+    public function destroy($id) {
+        $produto = Produto::find($id);
+        if(!isset($id)) {
+            return redirect()->route('produtos.index');
+        }      
+        $produto->delete();
+        return redirect()->route('produtos.index');
     }
 }

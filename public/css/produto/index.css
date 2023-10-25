@@ -4,3 +4,10 @@
     gap: 1rem;
     justify-content: space-between;
 }
+
+.btn-add {
+    padding: 1px;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+}
