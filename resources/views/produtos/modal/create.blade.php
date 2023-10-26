@@ -16,7 +16,7 @@
                     <div class="mb-3">
                         <label for="descricao" class="form-label">Descrição</label>
                         <input type="text" class="form-control" id="descricao"
-                        name="descricao" placeholder="Descrição">
+                        name="descricao" placeholder="Descrição (opcional)">
                     </div>
                     <div class="mb-3">
                         <label for="preco" class="form-label">Preço</label>

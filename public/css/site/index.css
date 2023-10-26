@@ -1,3 +1,7 @@
+nav {
+    background-color: #efeecc;
+}
+
 .main-content {
     display: flex;
     justify-content: center;
@@ -14,7 +18,7 @@
     width: 90%;
     margin: 10 auto;
     padding: 1rem;
-    background-color: rgb(14, 63, 92);
+    background-color: #efeecc;
     border-radius: 2rem;
 
 }
@@ -27,9 +31,49 @@
     color: rgb(255, 255, 255);
 }
 
-.main_section_content:hover{
-    background-color: rgb(148, 188, 211);
-    color: rgb(0, 0, 0);
+.main_content_novaCompra {
+    background-color: #fe8b05;
+}
+
+.main_content_novaCompra:hover{
+    background-color: #efeecc;
+    color: #fe8b05;
+    border: 1px solid #fe8b05;
+    transition: 200ms;
+}
+
+.main_content_historicoCompras {
+    background-color: #fe0557;
+}
+
+.main_content_historicoCompras:hover{
+    background-color: #efeecc;
+    color: #fe0557;
+    border: 1px solid #fe0557;
+    transition: 200ms;
+}
+
+.main_content_produto {
+    background-color: #400403;
+}
+
+
+.main_content_produto:hover{
+    background-color: #efeecc;
+    color: #400403;
+    border: 1px solid #400403;
+    transition: 200ms;
+}
+
+.main_content_Clientes {
+    background-color: #0aabba;
+}
+
+.main_content_Clientes:hover{
+    background-color: #efeecc;
+    color: #0aabba;
+    border: 1px solid #0aabba;
+    transition: 200ms;
 }
 
 

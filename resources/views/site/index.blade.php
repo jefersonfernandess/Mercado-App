@@ -14,7 +14,7 @@
             <a href="{{ route('produtos.index') }}" class="main_section_content main_content_produto text-center">
                 <h2>Produtos</h2>
             </a>
-            <a href="" class="main_section_content main_content_novoCliente text-center">
+            <a href="{{ route('clientes.index') }}" class="main_section_content main_content_Clientes text-center">
                 <h2>Clientes</h2>
             </a>
         </section>

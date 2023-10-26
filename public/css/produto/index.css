@@ -11,3 +11,7 @@
     border-radius: 0.2rem;
     background-color: rgb(255, 255, 255);
 }
+
+.btn-add:hover {
+    color: rgb(33, 135, 194);
+}

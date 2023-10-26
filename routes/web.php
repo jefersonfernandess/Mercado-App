@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProdutoController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,11 @@ Route::controller(ProdutoController::class)->group(function() {
     Route::post('/produtos', 'store')->name('produtos.store');
     Route::put('/produtos/{id}', 'update')->name('produtos.update');
     Route::delete('/produtos/{id}', 'destroy')->name('produtos.destroy');
+});
+
+Route::controller(ClienteController::class)->group(function () {
+    Route::get('/clientes', 'index')->name('clientes.index');
+    Route::get('/clientes/todos', 'verClientesIndex')->name('clientes.verClientesIndex');
+    Route::get('/clientes/cadastrar-novo-cliente', 'cadastrarNovoCLiente')->name('clientes.cadastrarNovoCliente');
+    Route::post('/clientes', 'storeClientes')->name('clientes.storeClientes');
 });
