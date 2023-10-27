@@ -30,37 +30,37 @@ nav {
     color: rgb(255, 255, 255);
 }
 
-.main_content_novaCompra {
-    background-color: #fe8b05;
+.main_content_clientesCadastrados {
+    background-color: #0aabba;
 }
 
-.main_content_novaCompra:hover{
+.main_content_clientesCadastrados:hover{
     background-color: #efeecc;
-    color: #fe8b05;
-    border: 1px solid #fe8b05;
+    color: #0aabba;
+    border: 1px solid #0aabba;
     transition: 200ms;
 }
 
-.main_content_historicoCompras {
-    background-color: #fe0557;
+.main_content_dividasEmAberto  {
+    background-color: #0aabba;
 }
 
-.main_content_historicoCompras:hover{
+.main_content_dividasEmAberto:hover{
     background-color: #efeecc;
-    color: #fe0557;
-    border: 1px solid #fe0557;
+    color: #0aabba;
+    border: 1px solid #0aabba;
     transition: 200ms;
 }
 
-.main_content_produto {
-    background-color: #400403;
+.main_content_novoCliente {
+    background-color: #0aabba;
 }
 
 
-.main_content_produto:hover{
+.main_content_novoCliente:hover{
     background-color: #efeecc;
-    color: #400403;
-    border: 1px solid #400403;
+    color: #0aabba;
+    border: 1px solid #0aabba;
     transition: 200ms;
 }
 

@@ -18,4 +18,5 @@ class Cliente extends Model
     ];
 
     protected $attributes = ['info_contato' => null];
+
 }
