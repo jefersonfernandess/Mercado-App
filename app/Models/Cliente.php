@@ -19,4 +19,8 @@ class Cliente extends Model
 
     protected $attributes = ['info_contato' => null];
 
+    public function divida()
+    {       
+        return $this->hasOne(Divida::class, 'id_divida', 'id');
+    }
 }
