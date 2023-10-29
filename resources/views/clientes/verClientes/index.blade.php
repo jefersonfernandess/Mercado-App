@@ -22,9 +22,9 @@
                         <td>{{ $cliente->nome }}</td>
                         <td>{{ $cliente->info_contato }}</td>
                         @if ($cliente->debito_em_aberto === 0)
-                        <td>Não</td>
+                        <td>Não, sem dividas</td>
                         @else
-                        <td>Sim</td>
+                        <td>Sim, <a href="#">vizualizar dívida</a></td>
                         @endif
                         <td></td>
                     </tr>
