@@ -27,13 +27,6 @@
                             Não
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="debito_em_aberto" id="true"
-                            value="1">
-                        <label class="form-check-label" for="true">
-                            Sim
-                        </label>
-                    </div>
                 </div>
             </fieldset>
             <button type="submit" class="btn btn-primary">Cadastrar</button>

@@ -28,6 +28,7 @@ nav {
     border-radius: 1rem;
     text-decoration: none;
     color: rgb(255, 255, 255);
+    font-size: 2rem;
 }
 
 .main_content_clientesCadastrados {
@@ -54,6 +55,7 @@ nav {
 
 .main_content_novoCliente {
     background-color: #0aabba;
+    border: none;
 }
 
 

@@ -26,7 +26,6 @@
                     </div>
                 </div>
             </fieldset>
-
             <div class="row mb-3">
                 <label for="descricao_divida" class="col-sm-2 col-form-label">Descrição da divida</label>
                 <div class="col-sm-10">
@@ -34,7 +33,7 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="total_divida" class="col-sm-2 col-form-label">Descrição da divida</label>
+                <label for="descricao_divida" class="col-sm-2 col-form-label">Total dívida</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="total_divida" name="total_divida">
                 </div>
