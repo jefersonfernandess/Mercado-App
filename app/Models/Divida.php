@@ -9,7 +9,7 @@ class Divida extends Model
 {
     use HasFactory;
     
-    protected $table = 'Divida';
+    protected $table = 'dividas';
 
     protected $fillable = [
         'id_divida',

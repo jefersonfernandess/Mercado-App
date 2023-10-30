@@ -7,26 +7,35 @@ use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
-    //Controller para mostrar o layout principal de clientes
-    public function index() {
+    //Método para mostrar o layout principal de clientes
+    public function index()
+    {
         return view('clientes.index');
     }
 
-    //Controller para mostrar todos os clientes
-    public function verClientesIndex() {
+    //Método para mostrar todos os clientes
+    public function verTodosClientes()
+    {
         $clientes = Cliente::get();
         return view('clientes.verClientes.index', compact('clientes'));
     }
 
-    //Controller para cadastro de novos clientes
-    public function cadastrarNovoCLiente() {
+    //Método para cadastro de novos clientes
+    public function cadastrarNovoCLiente()
+    {  
         return view('clientes.novoCLiente.create');
-    }   
+    }
 
-    public function storeClientes(Request $request) {
+    //Método para cadastro de novos clientes com divida
+    public function cadastrarNovoCLienteComDivida()
+    {  
+        return view('clientes.novoCLiente.createComDivida');
+    }
 
+    //Metodo para adicionar novo cliente
+    public function storeClientes(Request $request)
+    {
         $valorDebito  = intval($request->debito_em_aberto);
-        
         if ($valorDebito === 0) {
             Cliente::create([
                 'nome' => $request->nome,
@@ -34,8 +43,7 @@ class ClienteController extends Controller
                 'debito_em_aberto' => false
             ]);
         }
-
-        if($valorDebito === 1) {
+        if ($valorDebito === 1) {
             Cliente::create([
                 'nome' => $request->nome,
                 'info_contanto' => $request->info_contato,
@@ -43,5 +51,12 @@ class ClienteController extends Controller
             ]);
         }
         return redirect()->route('clientes.verClientesIndex');
+    }
+
+    //Método para mostrar a divida do cliente
+    public function showDividaCliente($id)
+    {
+        $cliente = Cliente::with('divida')->find($id);
+        return view('clientes.dividaCliente.index', compact('cliente'));
     }
 }

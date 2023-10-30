@@ -19,17 +19,20 @@ Route::get('/', function () {
     return view('site.index');
 });
 
-
-Route::controller(ProdutoController::class)->group(function() {
-    Route::get('/produtos', 'index')->name('produtos.index');
-    Route::post('/produtos', 'store')->name('produtos.store');
-    Route::put('/produtos/{id}', 'update')->name('produtos.update');
-    Route::delete('/produtos/{id}', 'destroy')->name('produtos.destroy');
+Route::controller(ProdutoController::class)->prefix('produtos')->group(function () {
+    Route::get('/', 'index')->name('produtos.index');
+    Route::post('/', 'store')->name('produtos.store');
+    Route::put('/{id}', 'update')->name('produtos.update');
+    Route::delete('/{id}', 'destroy')->name('produtos.destroy');
 });
 
-Route::controller(ClienteController::class)->group(function () {
-    Route::get('/clientes', 'index')->name('clientes.index');
-    Route::get('/clientes/todos', 'verClientesIndex')->name('clientes.verClientesIndex');
-    Route::get('/clientes/cadastrar-novo-cliente', 'cadastrarNovoCLiente')->name('clientes.cadastrarNovoCliente');
-    Route::post('/clientes', 'storeClientes')->name('clientes.storeClientes');
+Route::controller(ClienteController::class)->prefix('clientes')->group(function () {
+    Route::get('/', 'index')->name('clientes.index');
+    Route::get('/todos', 'verTodosClientes')->name('clientes.verClientesTodos');
+    //novo cliente sem divida
+    Route::get('/cadastrar-novo-cliente', 'cadastrarNovoCLiente')->name('clientes.cadastrarNovoCliente');
+    //novo cliente com divida
+    Route::get('/cadastrar-novo-cliente-com-divida', 'cadastrarNovoCLienteComDivida')->name('clientes.cadastrarNovoClienteComDivida');
+    Route::post('/', 'storeClientes')->name('clientes.storeClientes');
+    Route::get('/visualizar-divida/{id}', 'showDividaCliente')->name('clientes.showDivida');
 });
