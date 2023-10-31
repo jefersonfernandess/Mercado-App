@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\Divida;
 use Illuminate\Http\Request;
 
 class ClienteController extends Controller
@@ -23,13 +24,13 @@ class ClienteController extends Controller
     //Método para cadastro de novos clientes
     public function cadastrarNovoCLiente()
     {  
-        return view('clientes.novoCLiente.create');
+        return view('clientes.novoCliente.create');
     }
 
     //Método para cadastro de novos clientes com divida
     public function cadastrarNovoCLienteComDivida()
     {  
-        return view('clientes.novoCLiente.createComDivida');
+        return view('clientes.novoCliente.createComDivida');
     }
 
     //Metodo para adicionar novo cliente
@@ -44,19 +45,26 @@ class ClienteController extends Controller
             ]);
         }
         if ($valorDebito === 1) {
-            Cliente::create([
+            $cliente = Cliente::create([
                 'nome' => $request->nome,
                 'info_contanto' => $request->info_contato,
-                'debito_em_aberto' => true
+                'debito_em_aberto' =>true,                         
             ]);
+            if($cliente) {
+                Divida::create([
+                'id_divida' => $cliente->id,
+                'descricao_divida' => $request->descricao_divida,
+                'total_divida' => $request->total_divida
+                ]);
+            }
         }
-        return redirect()->route('clientes.verClientesIndex');
+        return redirect()->route('clientes.verClientesTodos');
     }
-
     //Método para mostrar a divida do cliente
     public function showDividaCliente($id)
     {
         $cliente = Cliente::with('divida')->find($id);
         return view('clientes.dividaCliente.index', compact('cliente'));
     }
+    
 }

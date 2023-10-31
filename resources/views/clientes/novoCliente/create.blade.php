@@ -15,7 +15,7 @@
                     <input type="text" id="info_contato" name="info_contato">
                 </div>
                 <div class="main-content_itens">
-                    <input type="radio" id="debito_em_aberto" name="debito_em_aberto" value="false" checked hidden>
+                    <input type="radio" id="debito_em_aberto" name="debito_em_aberto" value="0" checked hidden>
                 </div>
                 <div class="main-content_itens">
                     <button type="submit">Cadastrar cliente</button>

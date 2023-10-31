@@ -24,11 +24,11 @@
                             </div>
                             <div class="modal-body text-center">
                                 <p>O cliente tem <b>dívida</b>?</p>
-                                <a href="" class="btn btn-info">Sim</a>
+                                <a href="{{ route('clientes.cadastrarNovoClienteComDivida') }}" class="btn btn-info">Sim</a>
                                 <a href="{{ route('clientes.cadastrarNovoCliente') }}" class="btn btn-warning">Não</a>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-dark   " data-bs-dismiss="modal">Sair</button>
+                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Sair</button>
                             </div>
                         </div>
                     </div>
@@ -53,11 +53,19 @@
                         <td>{{ $cliente->info_contato }}</td>
                         @if ($cliente->debito_em_aberto === 0)
                             <td>Não, sem dividas</td>
+                            <td>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editClienteSemDivida"> Editar</button>
+                                @include('clientes.verClientes.modal.editClienteSemDivida')
+                            </td>
                         @else
                             <td>Sim, <a href="{{ route('clientes.showDivida', $cliente->id) }}">vizualizar dívida</a>
                             </td>
+                            <td>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editClienteComDivida"> Editar</button>
+                                @include('clientes.verClientes.modal.editClienteComDivida')
+                            </td>
                         @endif
-                        <td></td>
+                        
                     </tr>
                 @endforeach
             </tbody>
