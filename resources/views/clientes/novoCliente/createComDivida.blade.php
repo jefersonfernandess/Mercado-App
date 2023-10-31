@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('title', 'Cadastrar cliente - Mercado')
+
 @section('content')
     <div class="container">
         <form action="{{ route('clientes.storeClientes') }}" method="POST">
