@@ -21,18 +21,18 @@ Route::get('/', function () {
 
 Route::controller(ProdutoController::class)->prefix('produtos')->group(function () {
     Route::get('/', 'index')->name('produtos.index');
-    Route::post('/', 'store')->name('produtos.store');
-    Route::put('/{id}', 'update')->name('produtos.update');
-    Route::delete('/{id}', 'destroy')->name('produtos.destroy');
+    Route::post('/criar', 'store')->name('produtos.store');
+    Route::put('/atualizar/{id}', 'update')->name('produtos.update');
+    Route::delete('/apagar/{id}', 'destroy')->name('produtos.destroy');
 });
 
 Route::controller(ClienteController::class)->prefix('clientes')->group(function () {
     Route::get('/', 'index')->name('clientes.index');
-    Route::get('/todos', 'verTodosClientes')->name('clientes.verClientesTodos');
-    //novo cliente sem divida
+    Route::get('/todos', 'verTodosClientes')->name('clientes.verClientesTodos');   
     Route::get('/cadastrar-novo-cliente', 'cadastrarNovoCLiente')->name('clientes.cadastrarNovoCliente');
-    //novo cliente com divida
     Route::get('/cadastrar-novo-cliente-com-divida', 'cadastrarNovoCLienteComDivida')->name('clientes.cadastrarNovoClienteComDivida');
-    Route::post('/', 'storeClientes')->name('clientes.storeClientes');
     Route::get('/visualizar-divida/{id}', 'showDividaCliente')->name('clientes.showDivida');
+    Route::post('/salvar', 'storeClientes')->name('clientes.storeClientes');
+    Route::put('/atualizar/{id}', 'updateCliente')->name('clientes.updateClientes');
+    Route::delete('/apagar/{id}', 'destroyCliente')->name('clientes.destroyClientes');
 });
